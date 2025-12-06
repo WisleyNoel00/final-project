@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TaskBoard</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!-- Header (uses card class for hover lift effect) -->
+  <header class="site-header card">
+    <h1>TaskBoard</h1>
+    <p>Simple task manager — add, view, and delete tasks.</p>
+  </header>
+
+  <!-- Main grid: left = form, right = table + categories -->
+  <main class="container">
+    <!-- Add Task form -->
+    <section class="panel card" id="add-panel">
+      <h2>Add Task</h2>
+      <form id="task-form">
+        <label>
+          Title
+          <input type="text" id="title" name="title" required minlength="2" />
+        </label>
+
+        <label>
+          Category
+          <input type="text" id="category" name="category" required />
+        </label>
+
+        <label>
+          Priority (1-5)
+          <input type="number" id="priority" name="priority" min="1" max="5" value="3" required />
+        </label>
+
+        <label>
+          Due date
+          <input type="date" id="dueDate" name="dueDate" required />
+        </label>
+
+        <label>
+          Description
+          <textarea id="description" name="description" rows="3"></textarea>
+        </label>
+
+        <div class="form-actions">
+          <button type="submit" id="add-btn">Add Task</button>
+          <button type="reset">Reset</button>
+        </div>
+
+        <div id="form-error" class="error" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <!-- Tasks table and categories -->
+    <section class="panel card" id="list-panel">
+      <h2>Tasks</h2>
+      <div class="table-wrap">
+        <table id="tasks-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Priority</th>
+              <th>Due Date</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows will be added here by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Categories</h3>
+      <ul id="category-list">
+        <!-- category items will be added here -->
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer card">
+    <small>TaskBoard — Beginner version</small>
+  </footer>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>
